@@ -1,0 +1,119 @@
+# Blood Donation Project README
+
+## Overview
+
+The Blood Donation Project serves as a centralized hub to connect individuals in need of blood with potential donors, particularly during emergencies. This project consists of three main applications: **Account**, **Blood**, and **Admin**. It is designed to facilitate user registration, profile management, and blood donation requests while ensuring a smooth user experience with Bootstrap for responsive design.
+
+## Table of Contents
+
+1. [Features](#features)
+2. [Requirements](#requirements)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Contact](#contact)
+
+## Features
+
+- **User Registration:** Custom user model with fields for username, email, and roles (active, staff, admin).
+- **Login and Profile Management:** Ensure users have a profile before logging in; users can create and update their profiles with personal details and blood donation information.
+- **Blood Donation Requests:** Users can create, edit, delete, and view blood donation requests, categorized by type (donating or looking).
+- **Admin Dashboard:** Admins can manage users and blood donation requests effectively, with proper authentication and authorization.
+
+## Requirements
+
+### User Registration
+
+- Create a register function with the following fields:
+  - `username`
+  - `email`
+  - `active`
+  - `staff`
+  - `admin`
+
+### User Login
+
+- Each user must have a profile object that includes:
+  - `first_name`
+  - `last_name`
+  - `weight`
+  - `height`
+  - `region`
+  - `province`
+  - `municipality`
+  - `blood_type`
+  - `availability`
+  - `last_donation_date`
+- Implement linked selections for region, province, and municipality using JavaScript.
+
+### Profile Page
+
+- View own profile and associated blood donation requests.
+- Update profile while restricting changes to blood type and ensuring donation availability is validated against the last donation date.
+
+### Blood Donation CRUD
+
+- Model for blood donation requests with fields:
+  - `user`
+  - `request_type` (donating or looking)
+  - `blood_type`
+  - `region`
+  - `province`
+  - `municipality`
+- Class-based views for creating, editing, deleting, and listing blood donation requests.
+
+### Admin Dashboard
+
+- Create a dashboard for admin tasks:
+  - Manage blood donation requests and users.
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/blood-donation-project.git
+   cd blood-donation-project
+   python -m venv venv
+2. Set up a virtual environment and install dependencies:
+  python -m venv venv
+  source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+  pip install -r requirements.txt
+3. Apply migrations:
+   python manage.py migrate
+4. Create a superuser for admin access:
+   python manage.py createsuperuser
+5. Start the development server:
+   python manage.py runserver
+6. Open your browser and navigate to http://localhost:8000.
+
+## Usage
+
+- Registration: Access the registration page to create an account.
+- Login: Log in to access your profile and manage your blood donation requests.
+- Profile Management: View and update your profile information.
+- Request Blood Donation: Create or view blood donation requests through the dedicated section.
+- Admin Access: Use the admin dashboard to manage users and requests.
+
+## Contributing
+We welcome contributions! If you'd like to help improve this project:
+
+1. Fork the repository.
+2. Create a new branch:
+  git checkout -b feature/YourFeature
+3. Make your changes and commit them:
+   git commit -m "Add your message"
+4. Push to your branch:
+   git push origin feature/YourFeature
+5. Open a pull request.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contact
+For questions or suggestions, please reach out to eayerishz@gmail.com.
+
+Thank you for checking out the Blood Donation Project! Together, we can make a difference in our community.
+
+You can copy and paste this directly into your README file, and it should maintain the formatting for better readability!
+
